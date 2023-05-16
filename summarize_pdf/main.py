@@ -8,12 +8,10 @@ from dotenv import load_dotenv
 # Load environment variables with path to .env file
 load_dotenv(dotenv_path='../.env')
 
-
-
-loader = PyPDFLoader('./assets/Little-book-of-Deep-Learning.pdf')
+loader = PyPDFLoader('../assets/attention-all-you-need.pdf')
 data = loader.load()
 
-text_splitter = TokenTextSplitter(model_name='en_core_web_sm', chunk_size=4000, chunk_overlap=200)
+text_splitter = TokenTextSplitter(model_name='gpt-3.5-turbo', chunk_size=4000, chunk_overlap=200)
 docs = text_splitter.split_documents(data)
 
 llm = ChatOpenAI(temperature=0.3, model_name='gpt-3.5-turbo')
