@@ -1,7 +1,6 @@
 from langchain import PromptTemplate
 
 from dotenv import load_dotenv
-
 load_dotenv(dotenv_path='../../.env')
 
 similar_word_template = """"
